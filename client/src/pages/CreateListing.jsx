@@ -51,6 +51,7 @@ export default function CreateListing() {
           setUploading(false);
         })
         .catch((err) => {
+          console.error("Image upload failed:", err);
           setImageUploadError('Image upload failed (2 mb max per image)');
           setUploading(false);
         });
@@ -74,6 +75,7 @@ export default function CreateListing() {
           console.log(`Upload is ${progress}% done`);
         },
         (error) => {
+          console.error("Upload error:", error);
           reject(error);
         },
         () => {
